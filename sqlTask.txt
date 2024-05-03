@@ -1,0 +1,6 @@
+SELECT
+  p.ProductName AS 'Имя продукта',
+  COALESCE(c.CategoryName, 'Без категории') AS 'Имя категории'
+FROM Products p
+LEFT JOIN CategoryProducts pc ON p.ProductID = pc.ProductID
+LEFT JOIN Categories c ON c.CategoryID = pc.CategoryID;
